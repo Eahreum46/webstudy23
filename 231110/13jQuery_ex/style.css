@@ -28,13 +28,13 @@ body {
 }
 #wrap {
   position: relative;
-  border: 1px solid #f00;
+  /* border: 1px solid #f00; */
   width: 960px;
   height: 500px;
 }
 /* title css */
 #title {
-  border: 1px solid #f00;
+  /* border: 1px solid #f00; */
   position: absolute;
   top: -48px;
   left: 0;
@@ -73,8 +73,8 @@ body {
   width: 100%;
   height: 100%;
   padding: 0 40px;
-  /* overflow: hidden; */
-  margin-left: -40px;
+  overflow: hidden;
+  margin-left: -20px;
 }
 div[data-name] {
   width: 960px;
@@ -167,12 +167,13 @@ article > img:nth-of-type(2) {
 article > p {
   position: absolute;
   left: 400px;
-  top: 110px;
+  top: 120px;
   width: 430px;
 }
 
 /* navigation css */
 #main_navigation {
+  background: #fc3f3b;
   overflow: hidden;
 }
 #main_navigation > ul {
@@ -182,7 +183,7 @@ article > p {
   align-items: center;
 }
 #main_navigation > ul > li > a {
-  border: 1px solid #f00;
+  /* border: 1px solid #f00; */
   display: block;
   width: 200px;
   height: 50px;
@@ -205,14 +206,14 @@ article > p {
 }
 
 #main_navigation li:nth-child(1) > a:hover {
-  background-position: center -50px;
+  background-position: -6px -50px;
 }
 #main_navigation li:nth-child(2) > a:hover {
-  background-position: center -150px;
+  background-position: -6px -150px;
 }
 #main_navigation li:nth-child(3) > a:hover {
-  background-position: center -250px;
+  background-position: -6px -250px;
 }
 #main_navigation li:nth-child(4) > a:hover {
-  background-position: center -350px;
+  background-position: -6px -350px;
 }

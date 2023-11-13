@@ -3,5 +3,5 @@ $(function () {
   $("#p2").removeClass("red");
   $("#p3").toggleClass("green");
   $("#p4").toggleClass("green");
-  $("#p6").text($("#5")).hasClass("yellow");
+  $("#p6").text($("#p5")).hasClass("yellow");
 });
