@@ -1,3 +1,4 @@
+import { getByTitle } from "@testing-library/react";
 import emotion1 from "./img/emotion1.png";
 import emotion2 from "./img/emotion2.png";
 import emotion3 from "./img/emotion3.png";
@@ -62,3 +63,23 @@ export const getFormattedDate = (targetDate) => {
   }
   return `${year}-${month}-${date}`;
 };
+
+export const getMonthRangeByDate = (date) => {
+  const todayYear = date.getFullYear();
+  const todayMonth = date.getMonth();
+  const beginTimeStamp = new Date(todayYear, todayMonth, 1).getTime();
+  const endTimeStamp = new Date(
+    todayYear,
+    todayMonth + 1,
+    0,
+    23,
+    59,
+    59
+  ).getTime();
+  return { beginTimeStamp, endTimeStamp };
+};
+
+export const sortOptionList = [
+  { value: "latest", name: "최신순" },
+  { value: "oldest", name: "오래된순" },
+];
