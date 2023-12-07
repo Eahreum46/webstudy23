@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
 
 html,
 body {
-  font-family: "Nanum Pen Script", cursive;
-  /* font-family: "Yeon Sung", cursive; */
+  font-family: 'Nanum Pen Script';
+  /* font-family: 'Yeon Sung'; */
   margin: 0;
   width: 100%;
   background: #f6f6f6;

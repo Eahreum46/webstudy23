@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useNavigate, useEffect } from "react-router-dom";
-import Button from "./Button";
-import EmotionItem from "./EmotionItem";
-import { emotionList, getFormattedDate } from "../util";
-import "./Editor.css";
+import './Editor.css';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { emotionList, getFormattedDate } from '../util';
+import Button from './Button';
+import EmotionItem from './EmotionItem';
 
 const Editor = ({ initData, onSubmit }) => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Editor = ({ initData, onSubmit }) => {
   const [state, setState] = useState({
     date: getFormattedDate(today),
     emotionId: 3,
-    content: "",
+    content: '',
   });
   useEffect(() => {
     if (initData) {
@@ -27,7 +27,6 @@ const Editor = ({ initData, onSubmit }) => {
       ...state,
       date: e.target.value,
     });
-    console.log(e.target.value);
   };
   const handleChangeContent = (e) => {
     setState({
@@ -35,18 +34,19 @@ const Editor = ({ initData, onSubmit }) => {
       content: e.target.value,
     });
   };
-  const handleSubmit = (e) => {
-    onSubmit(state);
-  };
-  const handleOnGoBack = () => {
-    navigate(-1);
-  };
   const handleChangeEmotion = (emotionId) => {
     setState({
       ...state,
       emotionId,
     });
   };
+  const handleSubmit = () => {
+    onSubmit(state);
+  };
+  const handleOnGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="Editor">
       <div className="editor_section">
@@ -79,8 +79,8 @@ const Editor = ({ initData, onSubmit }) => {
         </div>
       </div>
       <div className="editor_section bottom_section">
-        <Button text={"취소하기"} onClick={handleOnGoBack} />
-        <Button text={"작성완료"} type={"positive"} onClick={handleSubmit} />
+        <Button text={'취소하기'} onClick={handleOnGoBack} />
+        <Button text={'작성완료'} type={'positive'} onClick={handleSubmit} />
       </div>
     </div>
   );

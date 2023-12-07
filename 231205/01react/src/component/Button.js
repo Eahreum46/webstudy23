@@ -1,12 +1,12 @@
-import React from "react";
-import "./Button.css";
+import React from 'react';
+import './Button.css';
 
 const Button = ({ text, type, onClick }) => {
-  const emotion = ["positive", "negative"];
-  const btnType = emotion.includes(type) ? type : "default";
-  const btnClass = ["Button", `Button_${btnType}`];
+  const emotion = ['positive', 'negative'];
+  const btnType = emotion.includes(type) ? type : 'default';
+  const btnClass = ['Button', `Button_${btnType}`];
   return (
-    <button className={btnClass.join(" ")} onClick={onClick}>
+    <button className={btnClass.join(' ')} onClick={onClick}>
       {text}
     </button>
   );

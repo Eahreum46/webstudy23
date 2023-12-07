@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { sortOptionList } from "../util";
-import "./DiaryList.css";
-import Button from "./Button";
+import './DiaryList.css';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { sortOptionList } from '../util';
+import DiaryItem from './DiaryItem';
+import Button from './Button';
 
 const DiaryList = ({ data }) => {
   const navigate = useNavigate();
-  const [sortType, setSortType] = useState("latest");
+  const [sortType, setSortType] = useState('latest');
   const [sortedData, setSortedData] = useState([]);
   useEffect(() => {
     const compare = (a, b) => {
-      if (sortType === "latest") {
+      if (sortType === 'latest') {
         return Number(b.date) - Number(a.date);
       } else {
         return Number(a.date) - Number(b.date);
@@ -24,13 +25,13 @@ const DiaryList = ({ data }) => {
     setSortType(e.target.value);
   };
   const onClickNew = () => {
-    navigate("/new");
+    navigate('/new');
   };
   return (
     <div className="DiaryList">
       <div className="menu_wrapper">
         <div className="left_col">
-          <select onChange={onChangeSortType}>
+          <select value={sortType} onChange={onChangeSortType}>
             {sortOptionList.map((it, idx) => (
               <option key={idx} value={it.value}>
                 {it.name}
@@ -40,11 +41,16 @@ const DiaryList = ({ data }) => {
         </div>
         <div className="right_col">
           <Button
-            type={"positive"}
-            text={"새 일기 쓰기"}
+            type={'positive'}
+            text={'새 일기 쓰기'}
             onClick={onClickNew}
           />
         </div>
+      </div>
+      <div className="list_wrapper">
+        {sortedData.map((it) => (
+          <DiaryItem key={it.id} {...it} />
+        ))}
       </div>
     </div>
   );

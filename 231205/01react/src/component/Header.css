@@ -9,7 +9,7 @@
   display: flex;
 }
 .Header button {
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 }
 .Header .header_left {
   width: 25%;
